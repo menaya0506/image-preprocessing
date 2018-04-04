@@ -11,7 +11,7 @@ Bumsoo Kim (meliketoy@gmail.com)
 # Requirements
 - python 2.7
 - [OpenCV](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html)
-=> sudo pip install opencv-python==3.2.0.8
+```=> sudo pip install opencv-python==3.2.0.8
 
 # Input directory
 The input directory should be in the given format:
