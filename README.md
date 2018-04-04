@@ -35,19 +35,19 @@ The input directory should be in the given format:
 
 ## 1. print
 ```bash
-python main print
+python main.py print
 ```
 This module will print all the the file names of image related file formats(".jpg", ".png")
 
 ## 2. read
 ```bash
-python main read
+python main.py read
 ```
 This module will read all the images and print out the spacial dimension of image related files.
 
 ## 3. resize
 ```bash
-python main resize [:len]
+python main.py resize [:len]
 
 # Example, to consist 256x256 images
 python main resize 256
@@ -56,7 +56,7 @@ This module will save all the resized images into your given directory
 
 ## 4. split
 ```bash
-python main split
+python main.py split
 ```
 This module will organize your input file directory into the following format.
 You should manually set how much validation sets you want in your val class in val_num from [config.py](./config.py).
@@ -90,7 +90,7 @@ You should manually set how much validation sets you want in your val class in v
 
 ## 5. check
 ```bash
-python main check
+python main.py check
 ```
 This will check how your data directory is consisted.
 An example for the file directory after running module 4 (split) is as below.
@@ -107,7 +107,7 @@ $ python main check
 
 ## 6. augmentation
 ```bash
-python main aug
+python main.py aug
 ```
 This module will apply various image augmentations and enlarge your training set.
 The input should be the splitted directory after running module 4 (split)
