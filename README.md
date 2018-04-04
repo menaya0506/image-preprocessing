@@ -50,7 +50,7 @@ This module will read all the images and print out the spacial dimension of imag
 sudo python main.py resize [:len]
 
 # Example, to consist 256x256 images
-python main resize 256
+sudo python main resize 256
 ```
 This module will save all the resized images into your given directory
 
