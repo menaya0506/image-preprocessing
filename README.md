@@ -41,7 +41,7 @@ This module will print all the the file names of image related file formats(".jp
 
 ## 2. read
 ```bash
-sudo python main.py read
+sudo python main.py read original
 ```
 This module will read all the images and print out the spacial dimension of image related files.
 
