@@ -6,6 +6,7 @@ import augmentation as aug
 import config as cf
 import numpy as np
 from operator import div
+from PIL import Image
 
 # print all the name of images in the directory.
 def print_all_imgs(in_dir):
@@ -34,6 +35,30 @@ def read_all_imgs(in_dir):
                 img = cv2.imread(file_path)
                 print('{:<100} {:>10}'.format(file_path, str(img.shape)))
                 # print(file_path + ",img size = "+str(img.shape))
+
+def normalize_images(in_dir, out_dir):
+    check_and_mkdir(out_dir) # sanity check for the target output directory
+
+    for subdir, dirs, files in os.walk(in_dir):
+        for f in files:
+            file_path = subdir + os.sep + f
+            if (is_image(f)):
+                #img = cv2.imread(file_path)
+                #resized_img = cv2.resize(img, (target_size, target_size), interpolation = cv2.INTER_CUBIC)
+                im = Image.open(file_path).convert("RGB")
+                x, y = im.size
+                edge = x if x > y else y
+                im2 = Image.new("RGB", (edge, edge))
+                im2.paste(im, (0, 0, x, y))
+                class_dir = out_dir + os.sep + file_path.split("/")[-2]
+                check_and_mkdir(class_dir) # sanity check for the target class directory
+                
+                file_name = class_dir + os.sep + file_path.split("/")[-1]
+                print(file_name)
+                #cv2.imwrite(file_name, resized_img)
+                im2.save(file_name)
+                im.close()
+                im2.close()
 
 # resize the imgs from in_dir, and save with exact same hierarchy in the out_dir
 def resize_images(in_dir, out_dir, target_size):

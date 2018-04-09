@@ -13,6 +13,7 @@ if __name__ == "__main__":
         print("# Mode 3 'resize': [target_size]  Resize & Orgnaize data")
         print("# Mode 4 'split' : Create a train-validation split of data")
         print("# Mode 5 'check' : Check the distribution of data")
+        print("# Mode 6 'normalize' : Normalization the imageset")
         print("##########################################################")
         sys.exit(0)
     mode = sys.argv[1]
@@ -46,8 +47,16 @@ if __name__ == "__main__":
         else:
             ff.check_and_mkdir(cf.resize_base)
             target_size = int(sys.argv[2])
-            ff.resize_images(cf.data_base, cf.resize_dir, target_size)
+            ff.resize_images(cf.norm_dir, cf.resize_dir, target_size)
     #############################################
+	
+	#############################################
+    # @ Module 6 : Normalization the imageset
+    if (mode == 'normalize'):
+        ff.check_and_mkdir(cf.norm_base)
+        split_dir = ff.normalize_images(cf.data_base, cf.norm_dir)
+        print("Normalization directory = " + cf.norm_dir)
+    ############################################
 
     #############################################
     # @ Module 4 : Train-Validation split

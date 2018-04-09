@@ -12,21 +12,23 @@
 # name = 'image_patches_inbreast_new'
 # name = 'image_patches_guro_new'
 # name = 'inbreast_patches_9'
-name = 'GURO_CELL_AUG'
+# name = 'GURO_CELL_AUG'
 # name = 'GURO_MORE_BENIGN'
 # name = 'GURO_FILTER'
 # name = 'GURO_ALL'
 
 # Base directory for data formats
-data_base = '/mnt/datasets/' + name
+data_base = '/home/wchsieh/dset'
 
 # Base directory for augmented data formats
-resize_base = '/home/bumsoo/Data/resized/'
-split_base = '/home/bumsoo/Data/split/'
+resize_base = '/home/wchsieh/resized'
+split_base = '/home/wchsieh/split'
+norm_base = '/home/wchsieh/normalized'
 
 # Directory for data formats
-resize_dir = resize_base + name
-split_dir = split_base + name
+resize_dir = resize_base
+split_dir = split_base
+norm_dir = norm_base
 
 # Validation split
-val_num = 10
+val_num = 4
